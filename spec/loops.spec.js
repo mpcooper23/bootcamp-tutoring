@@ -1,8 +1,8 @@
 
 describe('loops', function(){
-    describe('test one', function(){
-        it('should be a test', function(){
-            assert.equal(true, true);
+    describe('getFirstPrepObservation', function(){
+        it('should return a string if an observation exists', function(){
+            
         })
     })
 });
