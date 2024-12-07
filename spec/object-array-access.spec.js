@@ -9,5 +9,14 @@ describe('object & array access', function(){
         });
     });
 
+    describe('getLastObservationAuthor', function(){
+        it('should return a string', function(){
+            assert.equal(typeof getLastObservationAuthor(student), 'string');
+        });
+        it('should return a correctly formatted string', function(){
+            assert.equal(getLastObservationAuthor(student), "Vanessa Jones - Student Success Coordinator");
+        })
+    });
+
 
 });
