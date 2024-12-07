@@ -17,7 +17,7 @@ const student = {
                         role: 'Instructor'
                     },
                     text: 'He would benefit from asking more questions in class.',
-                    dateObserved: '8/03/2023'
+                    dateObserved: '08/03/2023'
                 }
             ]
         },
@@ -133,7 +133,7 @@ const students = [
                             role: 'Instructor'
                         },
                         text: 'He would benefit from asking more questions in class.',
-                        dateObserved: '8/03/2023'
+                        dateObserved: '08/03/2023'
                     }
                 ]
             },
