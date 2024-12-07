@@ -5,9 +5,9 @@ describe('object & array access', function(){
             assert.equal(typeof getFirstPrepObservation(student), 'string');
         });
         it('should return a correctly formatted string', function(){
-            assert.equal(getFirstPrepObservation(student), "Stephanie was absent from class due to her powering being out. - 11/06/2024")
+            assert.equal(getFirstPrepObservation(student), "He would benefit from asking more questions in class. - 08/23/2023")
         });
     });
 
-    
+
 });
