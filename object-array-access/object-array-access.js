@@ -22,7 +22,6 @@ function getLastRoleAndDateArray(array){
         } else {
             object = course.observations[0];
         }
-        
         output.push(object.author.role + " - " + object.dateObserved);
     }
     return output;
