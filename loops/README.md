@@ -1,4 +1,4 @@
-### For loops
+## For loops
 
 Looping concepts are very important in JavaScript because they give us an ability to repeat a sequence of code more efficiently. Consider this example:
 
@@ -128,3 +128,57 @@ for (let i = 0; i < 4; i++){
 // fifth iteration => i = 4 // 4 < 4 (false) // LOOP ENDS
 ```
 
+There is one problem with this for loop we created though, and it's the stop condition we chose: `i < 4`. You see, this is still hard-coding. If any additional students get added to our `students` array, the for loop will still only count from index 0-3. For that reason, what we almost always do in this case is reference the array's length in our stop condition:
+
+```javascript
+for (let i = 0; i < students.length; i++){
+    console.log(students[i]);
+}
+```
+
+It's okay to 'hard-code' that i begins at 0 because we will always want the loop to start counting at zero. But by coding `i < students.length` we are keeping our loop flexibile. Even if more students get added, we will always just be referencing the current length as our stopping out.
+
+To bring this back to our original problem, we could use the for loop to simply our code to this:
+
+```javascript
+const bootcampStudents = [];
+
+for (let i = 0; i < students.length; i++){
+    if (students[i].course === 'Bootcamp'){
+        bootcampStudents.push((students[i]))
+    }
+}
+
+```
+
+### Manipulating For Loops
+
+The key thing to understand with a for loop is that YOU get to determine how it "counts". Now, if we are using a for loop to "count" through the indexes of an array so we can access each item one at a time efficiently, we will typically do what you saw in the example above. We will start our counting variable at 0; we will continue counting as long as the variable is less than the length of the array; and we will increment by 1 each iteration. But there's nothing to say we can't play with that. Take this array for example:
+
+```javascript
+const names = ['stanley', 'vickie', 'alex', 'kyle', 'arthur', 'stephanie'];
+```
+
+What if we wanted to iterate through the array and log each name, but we wanted to it in _reverse_. Well, just think about what that would entail. Rather than starting our loop at 0, we would want to start the loop at the _**last**_ index of the array.Instead of saying, "keep iterating as our long as our counting variable is _**less than**_ than the length of the array", we want to say, "keep counting as long as the counting variable is _**greater than or equal to**_ zero. And finally, instead of incrementing our counting variable we want to decrement it.
+
+```javascript
+for (let i = names.length - 1; i >= 0; i--){
+    console.log(names[i]);
+}
+/*
+LOGS => 
+stephanie
+arthur
+kyle
+alex
+vickie
+stan
+*/
+```
+
+Think of how this counting sequence will break down:
+* `let i = names.length - 1`: The length of the array is 6, and 6 minus 1 gives us 5. So the sequence begins at 5.
+* `i >= 0`: The loop will continue as long as i is greater than or equal to 0.
+* `i--`: i will decrement by 1 at the end of each iteration.
+
+This will give us a sequence that counts 5, 4, 3, 2, 1, 0 and then stops; thus allowing us to iterate backwards through the array. We're still following the essential rules of the for loop. We are creating a counting variable and giving it a starting number; we are defining a condition that when false stops the loop; and we are defining how to increment our loop each iteration.
