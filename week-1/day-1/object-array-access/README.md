@@ -205,12 +205,12 @@ const user1 = {
     purchases: [
         {
             item: 'Rear Window Bluray',
-            date: '12/10/2023
+            date: '12/10/2023',
             price: 20.99
         },
         {
             item: 'Wired earbuds',
-            date: '2/05/2024/
+            date: '2/05/2024/',
             price: 16.99
         }
     ]
@@ -225,3 +225,76 @@ You would start by accessing the `user1` object's purchases array... `user1.purc
 console.log(user1.purchases[0].item); // LOGS => Rear Winddow Bluray
 ```
 
+Finally, imagine we had an entire array of these types of users:
+
+```javascript
+const users = [
+    {
+        firstName: 'Alex',
+        lastName: 'Aaron',
+        age: 37,
+        phone: '111-222-3333',
+        email: 'alex@operationspark.org',
+        emergencyContact: {
+            name: 'Stephanie Cooper',
+            relationship: 'Spouse',
+            phone: '888-777-6666'
+        },
+        purchases: [
+            {
+                item: 'Rear Window Bluray',
+                date: '12/10/2023',
+                price: 20.99
+            },
+            {
+                item: 'Wired earbuds',
+                date: '2/05/2024/',
+                price: 16.99
+            }
+        ]
+   },
+   {
+        firstName: 'Stephanie',
+        lastName: 'Cooper',
+        age: 37,
+        phone: '888-777-6666',
+        email: 'steph@email.com',
+        emergencyContact: {
+            name: 'Alex Aaron',
+            relationship: 'Spouse',
+            phone: '111-222-3333'
+        },
+        purchases: [
+            {
+                item: 'Chair mat',
+                date: '12/13/2024',
+                price: 31.67
+            },
+            {
+                item: 'Bluetooth earbuds',
+                date: '12/14/2024',
+                price: '23.15'
+            }
+        ]
+   },
+   {
+        firstName: 'Bethany',
+        lastName: 'Joseph',
+        age: 35,
+        phone: '555-444-3333',
+        email: 'bethany@email.com',
+        emergencyContact: {
+            name: 'Chris Parker',
+            relationship: 'Boyfriend',
+            phone: '777-888-9999'
+        },
+        purchases: [
+            {
+                item: 'Rug',
+                date: '10/12/2024',
+                price: 50.99
+            },
+        ]
+   }
+]
+```

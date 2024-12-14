@@ -1,8 +1,10 @@
 // sample object
 const student = {
-    name: 'Nathan Coen',
+    firstName: 'Nathan',
+    lastName: 'Coen',
     age: 36,
-    location: 'Atlanta, Georgia',
+    city: 'Atlanta',
+    state: 'Georgia',
     timeZone: 'EST',
     courses: [
         {
@@ -44,7 +46,7 @@ const student = {
                     dateObserved: '10/05/2023'
                 }
             ]
-        }
+        },
     ]
 };
 
