@@ -74,7 +74,7 @@ If you break this code down to it's most abstract, it can expressed like this:
 const bootcampStudents = [];
 
 if (students[<index>].course === 'Bootcamp'){
-    bootcampStudents.push((students[<index>]))
+    bootcampStudents.push(students[<index>])
 }
 ```
 
@@ -411,3 +411,190 @@ for (let <variable> in <object>){
 }
 ```
 
+With for in loops, you declare a variable (we usually call this variable `key`) and you specify the name of the object you want to iterate through. In this case, that worked out to `for (let key in movie)...` The way a for in loop iterates is that it access every key in the object one at a time. You can see in the example above that when we hit this code - `console.log(key)` - it logs each key in the movie object. Just like a for loop has a counting variable that changes each iteration, so does this `key` variable. Each iteration, it represents the new key we're accessing.
+
+The question is what can we do with this? Well, if you think of any object access question you will quickly realize that if you have access to a key and the name of the object, you have everything you need to access the value that exists at that key.
+
+```javascript
+const movie = {
+    title: 'Rear Window',
+    director: 'Alfred Hitchcock',
+    year: 1954,
+    topBilledActor: 'James Stewart'
+}
+
+console.log(movie.title); // LOGS => Rear Window
+```
+
+Break this example down into its most basic parts. We know we have an object called `movie` and we know there is a key on that object called `title` that we want to access, so we just use the basic object access principles to log the value. The same thing is true of a for in loop, except you have to remember that you are not dealing with a literal key each iteration. You are dealing with a VARIABLE that represents the current key. 
+
+Here is what it would look like if I wanted to log the VALUE at each key of the movie object using a for in loop.
+
+```javascript
+const movie = {
+    title: 'Rear Window',
+    director: 'Alfred Hitchcock',
+    year: 1954,
+    topBilledActor: 'James Stewart'
+}
+
+for (let key in movie){
+    console.log(movie[key]);
+}
+```
+
+## Nesting Loops
+
+It is important to remember that these loops can all be used in conjunction with each other. For example, what if I wanted to loop through `users` array and log all of the values from each user`s emergency contact. When you encounter problems like this, always start at your outermost point. In this case, that is the array populatd we need to access. So, again we can start with this basic structure:
+
+```javascript
+for (let i = 0; i < users[i].length; i++){
+    // users[i] gives us access to each user object one at a time
+}
+```
+
+Once we create our initial for loop, we know `users[i]` gives us access to each user. Then the question becomes, what are we trying to do to each user? In this case, we want to access each user's emergencyContact object and iterate through the values. Again, start with the outermost concern--accessing the current user's emergencyContact object...
+
+```javascript
+for (let i = 0; i < users[i].length; i++){
+    console.log(users[i].emergencyContact);
+}
+```
+
+If you're checking this work in your own workspace, you should see each user's emergencyContact object being logged. Now we can use a for in loop. If we know `users[i].emergencyContact` gives us access to an object, we can use a for in loop to iterate over that object.
+
+```javascript
+for (let i = 0; i < users[i].length; i++){
+    for (let key in users[i].emergencyContact){
+        console.log(users[i].emergencyContact[key])
+    }
+}
+```
+
+Here is what we have done in essence... we have a created a for loop that will iterate over every object in the `users` array. Each iteration of that for loop we are accessing the current user's emergencyContact and initiating a for in loop to log the values at each key of that object. Check this work in your own workspace to confirm the result.
+
+One thing to consider... take a look at our final console.log statement => `console.log(users[i].emergencyContact[key])` 
+
+Seems a little long and clunky right? This can happen frequently when you are dealing complex pieces of data. Sometimes it can make your code more readable to create variables to shorten some of this.
+
+```javascript
+for (let i = 0; i < users[i].length; i++){
+    const contact = users[i].emergencyContact;
+    for (let key in contact){
+        console.log(contact[key])
+    }
+}
+```
+
+You can see in this example that rather than writing the whole code out, we can create a `contact` variable that references `users[i].emergencyContact`. So, in our for in loop we can just use that `contact` variable.
+
+This is not the only way we can nest loops. It is entirely possible to nest for loops. Take another look at our `users` array.
+
+```javascript
+const users = [
+    {
+        firstName: 'Alex',
+        lastName: 'Aaron',
+        age: 37,
+        phone: '111-222-3333',
+        email: 'alex@operationspark.org',
+        emergencyContact: {
+            name: 'Stephanie Cooper',
+            relationship: 'Spouse',
+            phone: '888-777-6666'
+        },
+        purchases: [
+            {
+                item: 'Rear Window Bluray',
+                date: '12/10/2023',
+                price: 20.99
+            },
+            {
+                item: 'Wired earbuds',
+                date: '2/05/2024/',
+                price: 16.99
+            }
+        ]
+   },
+   {
+        firstName: 'Stephanie',
+        lastName: 'Cooper',
+        age: 37,
+        phone: '888-777-6666',
+        email: 'steph@email.com',
+        emergencyContact: {
+            name: 'Alex Aaron',
+            relationship: 'Spouse',
+            phone: '111-222-3333'
+        },
+        purchases: [
+            {
+                item: 'Chair mat',
+                date: '12/13/2024',
+                price: 31.67
+            },
+            {
+                item: 'Bluetooth earbuds',
+                date: '12/14/2024',
+                price: '23.15'
+            }
+        ]
+   },
+   {
+        firstName: 'Bethany',
+        lastName: 'Joseph',
+        age: 35,
+        phone: '555-444-3333',
+        email: 'bethany@email.com',
+        emergencyContact: {
+            name: 'Chris Parker',
+            relationship: 'Boyfriend',
+            phone: '777-888-9999'
+        },
+        purchases: [
+            {
+                item: 'Rug',
+                date: '10/12/2024',
+                price: 50.99
+            },
+        ]
+   }
+]
+```
+
+We have an array of `users`, and each user has it's own array of `purchases`. What if we needed to access all of the purchases each user made for some purpose? Maybe we were collecting all of the individual purchases into their own array. Just like the previous problem, you start with the outermost concern, which is iterating through our users (we can't access the purchases if we're not accessing the users first).
+
+```javascript
+const allPurchases = [];
+
+for (let i = 0; i < users.length; i++){
+    // users[i] gives us access to each user object
+}
+```
+
+Again, this basic for loop gives us access to each user through `users[i]`. What is the next concern... iterating through each user's purchases. That requires another loop within our current one.
+
+```javascript
+const allPurchases = [];
+
+for (let i = 0; i < users.length; i++){
+    for (let j = 0; j < users[i].purchases.length; j++){
+        allpurchases.push(users[i].purchases[j]);
+    }
+}
+```
+
+The first thing you will probably notice is that the nested for loop has a different countinv variable declared - `j`. This is because creating the same variable as the outer for loop will cause a lot of problems. 
+
+Again though, you can see the pattern. Our first for loop gives us the ability to access each index of the `users` array. Each iteration of that loop, we are then iterating through the current user's `purchases` property and loggin each purchase the console. This is another example where creating a variable can make your life easier.
+
+```javascript
+const allPurchases = [];
+
+for (let i = 0; i < users.length; i++){
+    const purchases = users[i].purchases;
+    for (let j = 0; j < purchases.length; j++){
+        allPurchases.push(purchases[j]);
+    }
+}
+```
