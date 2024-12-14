@@ -78,7 +78,7 @@ Bracket notation allows our key parameter to resolve to whatever key was passed 
 
 #### Adding or Reassigning Data in Objects Using Dot or Bracket Notation
 
-Accessing data in an object is one thing, but what if we want to do something else? What if we want to add something new to the object? Or what if we determine we want to change some data that already exists on the object? Luckily, the way do this still involves the same principles of dot or bracket notation. Take our `user1` object for instance. What if we want to add a key of `location` set to a string of whatever city they live in. It would like like this...
+Accessing data in an object is one thing, but what if we want to do something else? What if we want to add something new to the object? Or what if we determine we want to change some data that already exists on the object? Luckily, the way do this still involves the same principles of dot or bracket notation. Take our `user1` object for instance. What if we want to add a key of `location` set to a string of whatever city they live in. It would like this...
 
 ```javascript
 // dot notation
@@ -118,7 +118,16 @@ or...
 user1['phone'] = '999-888-7777';
 ```
 
-The same considerations that we discussed in the previous section apply here. If you know the literal name of the key you're trying to access, you can only use dot notation, but if we're using a variable or parameter then only dot notation will work. 
+The same considerations that we discussed in the previous section apply here. If you know the literal name of the key you're trying to access, you can only use dot notation, but if we're using a variable or parameter then only dot notation will work. Take this example...
+
+```javascript
+const keyToUpdate = 'age';
+const valueToUpdate = 38;
+
+user1[keyToUpdate] = valueToUpdate;
+```
+
+In this particular example, we don't have a _literal_ key we are trying to access--we have a variable called **keyToUpdate**. So, we can't use dot notation. The only we can we can interact with this variable is by putting it in brackets so that it can resolve to the key string it represents.
 
 ## Arrays
 
@@ -225,76 +234,4 @@ You would start by accessing the `user1` object's purchases array... `user1.purc
 console.log(user1.purchases[0].item); // LOGS => Rear Winddow Bluray
 ```
 
-Finally, imagine we had an entire array of these types of users:
 
-```javascript
-const users = [
-    {
-        firstName: 'Alex',
-        lastName: 'Aaron',
-        age: 37,
-        phone: '111-222-3333',
-        email: 'alex@operationspark.org',
-        emergencyContact: {
-            name: 'Stephanie Cooper',
-            relationship: 'Spouse',
-            phone: '888-777-6666'
-        },
-        purchases: [
-            {
-                item: 'Rear Window Bluray',
-                date: '12/10/2023',
-                price: 20.99
-            },
-            {
-                item: 'Wired earbuds',
-                date: '2/05/2024/',
-                price: 16.99
-            }
-        ]
-   },
-   {
-        firstName: 'Stephanie',
-        lastName: 'Cooper',
-        age: 37,
-        phone: '888-777-6666',
-        email: 'steph@email.com',
-        emergencyContact: {
-            name: 'Alex Aaron',
-            relationship: 'Spouse',
-            phone: '111-222-3333'
-        },
-        purchases: [
-            {
-                item: 'Chair mat',
-                date: '12/13/2024',
-                price: 31.67
-            },
-            {
-                item: 'Bluetooth earbuds',
-                date: '12/14/2024',
-                price: '23.15'
-            }
-        ]
-   },
-   {
-        firstName: 'Bethany',
-        lastName: 'Joseph',
-        age: 35,
-        phone: '555-444-3333',
-        email: 'bethany@email.com',
-        emergencyContact: {
-            name: 'Chris Parker',
-            relationship: 'Boyfriend',
-            phone: '777-888-9999'
-        },
-        purchases: [
-            {
-                item: 'Rug',
-                date: '10/12/2024',
-                price: 50.99
-            },
-        ]
-   }
-]
-```

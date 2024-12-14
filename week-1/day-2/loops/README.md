@@ -182,3 +182,153 @@ Think of how this counting sequence will break down:
 * `i--`: i will decrement by 1 at the end of each iteration.
 
 This will give us a sequence that counts 5, 4, 3, 2, 1, 0 and then stops; thus allowing us to iterate backwards through the array. We're still following the essential rules of the for loop. We are creating a counting variable and giving it a starting number; we are defining a condition that when false stops the loop; and we are defining how to increment our loop each iteration.
+
+### Iterating Through Arrays of Complex Data
+
+Think back to our last section, **"Object And Array Access"**, and the incredibly complicated `user` object we created:
+
+```javascript
+const user1 = {
+    firstName: 'Alex',
+    lastName: 'Aaron',
+    age: 37,
+    phone: '111-222-3333',
+    email: 'alex@operationspark.org',
+    emergencyContact: {
+        name: 'Stephanie Cooper',
+        relationship: 'Wife',
+        phone: '888-777-6666'
+    },
+    purchases: [
+        {
+            item: 'Rear Window Bluray',
+            date: '12/10/2023',
+            price: 20.99
+        },
+        {
+            item: 'Wired earbuds',
+            date: '2/05/2024/',
+            price: 16.99
+        }
+    ]
+};
+```
+
+Now imagine we had an entire array of these types of objects.
+
+```javascript
+const users = [
+    {
+        firstName: 'Alex',
+        lastName: 'Aaron',
+        age: 37,
+        phone: '111-222-3333',
+        email: 'alex@operationspark.org',
+        emergencyContact: {
+            name: 'Stephanie Cooper',
+            relationship: 'Spouse',
+            phone: '888-777-6666'
+        },
+        purchases: [
+            {
+                item: 'Rear Window Bluray',
+                date: '12/10/2023',
+                price: 20.99
+            },
+            {
+                item: 'Wired earbuds',
+                date: '2/05/2024/',
+                price: 16.99
+            }
+        ]
+   },
+   {
+        firstName: 'Stephanie',
+        lastName: 'Cooper',
+        age: 37,
+        phone: '888-777-6666',
+        email: 'steph@email.com',
+        emergencyContact: {
+            name: 'Alex Aaron',
+            relationship: 'Spouse',
+            phone: '111-222-3333'
+        },
+        purchases: [
+            {
+                item: 'Chair mat',
+                date: '12/13/2024',
+                price: 31.67
+            },
+            {
+                item: 'Bluetooth earbuds',
+                date: '12/14/2024',
+                price: '23.15'
+            }
+        ]
+   },
+   {
+        firstName: 'Bethany',
+        lastName: 'Joseph',
+        age: 35,
+        phone: '555-444-3333',
+        email: 'bethany@email.com',
+        emergencyContact: {
+            name: 'Chris Parker',
+            relationship: 'Boyfriend',
+            phone: '777-888-9999'
+        },
+        purchases: [
+            {
+                item: 'Rug',
+                date: '10/12/2024',
+                price: 50.99
+            },
+        ]
+   }
+]
+```
+
+Seems pretty complex, right? Well, yes, but we interact with arrays populated with objects this complicated all the time. You need to feel confident using everything you know about for loops and object & array access to do this successfully.
+
+Let's consider a relatively straightforward problem first: create a for loop to iterate over this `users` array and log each user's fullName to the console.
+
+The first part of this problem is relatively simple... if we want to create a loop to iterate over `user` we need to create a counting sequence with a counting variable that starts at zero...
+
+```javascript
+for (let i = 0; _____; _____){
+
+}
+```
+
+... we want to keep iterating as long as that variable is less than the length of the array...
+
+```javascript
+for (let i = 0; i < users.length; _____){
+
+}
+```
+
+... and we want to increment our counting variable by 1 at the end of each iteration.
+
+```javascript
+for (let i = 0; i < users.length; i++){
+    console.log(?);
+}
+```
+
+The most important thing to remember when you create a for loop that is intended to "iterate" through an array is that your counting variable is just a number. In this case, it will count `0, 1, 2` and then stop. BUT, you can use that number to access the item at each index in the array. So, as this for loop iterates, each iteration we can do this:
+
+```javascript
+for (let i = 0; i < users.length; i++){
+    console.log(users[i]);
+}
+```
+But if you execute you'll notice this doesn't give us the full name we're trying to log, it just gives the current user object. That's because of the principles of array access. On the first iteration, our counting variable of i is set to `0`, so when we hit `console.log(users[i])` that code resolves to `console.log(users[0])`, which is just the user object representing Alex Aaron. If we want to use this for loop to log the full name of each student we need to use the principles of object access as well.
+
+If we know `users[i]` represents an object at each iteration, then `users[i].firstName` should give us that object's firstName value and `users[i].lastName` should give us that object's lastName value.
+
+```javascript
+for (let i = 0; i < users.length; i++){
+    console.log(users[i].firstName + " " + users[i].lastName);
+}
+```
