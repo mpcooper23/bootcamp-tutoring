@@ -332,3 +332,82 @@ for (let i = 0; i < users.length; i++){
     console.log(users[i].firstName + " " + users[i].lastName);
 }
 ```
+
+And that example is one of the simpler ones. Imagine if we wanted to loop through the `users` array to log the name of each user's emergency contact. The good news is that since we're still just trying to access every index of the `users` array, we can create the same basic structure:
+
+```javascript
+for (let i = 0; i < users.length; i++){
+    // what next?
+}
+
+```
+But as we're accessing each object one at a time, it gets a little tougher. We're still just starting with `users[i]` since we know that code represents the object we're trying to access data on.
+
+```javascript
+for (let i = 0; i < users.length; i++){
+    console.log(users[i])
+}
+
+```
+
+Then we need to access the `emergencyContact` key that exists on `users[i]`.
+```javascript
+for (let i = 0; i < users.length; i++){
+    console.log(users[i].emergencyContact)
+}
+```
+
+If you are checking this code in your own workspace, you will see that we are closer! Now, we are accessing the emergency contact objects at each iteration. But we're not done yet. We said at the beginning we wanted to access their name.
+
+```javascript
+for (let i = 0; i < users.length; i++){
+    console.log(users[i].emergencyContact.name);
+}
+/*
+LOGS =>
+Stephanie Cooper
+Alex Aaron
+Chris Parker
+*/
+
+```
+
+Once we specify that we are trying to access the `name` key that exists at `users[i].emergencyContact, our code will now log the names properly.
+
+## For In Loops
+
+For loops are a great tool for iterating through arrays or strings (remember that strings are also zero indexed). But if we need to iterate through an object, they are less useful. Objects are not ordered by an index. We don't think of an object as having a first item and a last item. Objects dont' even have a built-in length property. Objects are just collections of key/value pairs.
+
+Luckily, there is a construct that exists in JavaScript that makes iterating through objects easier: `for in loop`
+
+Look at the object below. Here is how we used use a for in loop to iterate through it.
+
+```javascript
+const movie = {
+    title: 'Rear Window',
+    director: 'Alfred Hitchcock',
+    year: 1954,
+    topBilledActor: 'James Stewart'
+}
+
+for (let key in movie){
+    console.log(key);
+}
+
+/*
+LOGS =>
+title
+director
+year
+topBilledActor
+*/
+```
+
+The most important part in the construction of the for in loop is this...
+
+```javascript
+for (let <variable> in <object>){
+    // code to execute at each key of the object
+}
+```
+
