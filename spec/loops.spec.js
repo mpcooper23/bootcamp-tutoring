@@ -78,6 +78,19 @@ describe('loops', function(){
     });
 
     describe("getStringValues", function(){
-        
+        it('should return an array', function(){
+            assert.equal(Array.isArray(getStringValues(students[0])), true)
+        });
+        it('should return an array of string values with a length greater than 3', function(){
+            assert.deepEqual(getStringValues(students[0]), [
+                "Stephanie Cooper",
+                "New Orleans, LA"
+            ]);
+        });
+        it('should use a for in loop', function(){
+            const func = getStringValues.toString();
+            console.log(func.match(/for\s[(][a-z]{3}\s[a-zA-Z]+\sin\s[a-zA-Z]+[)]/g));
+            assert.equal(func.match(/for\s[(][a-z]{3}\s[a-zA-Z]+\sin\s[a-zA-Z]+[)]/g).length > 0, true);
+        })
     })
 });

@@ -1,5 +1,11 @@
 
 // Problem #1 //
+
+//regex to check standard backwards for loop
+// for\s[(][a-z]{3}\s[a-z]+\s=\s[a-zA-Z]+\.length\s-\s1;\si\s>=\s0;\si--[)]
+
+//regex to check backwards for loop where i > -1
+// for\s[(][a-z]{3}\s[a-z]+\s=\s[a-zA-Z]+\.length\s-\s1;\si\s>\s-1;\si--[)]
 function logLocationAndTime(array){
     for (let i = array.length - 1; i >= 0; i--){
         console.log(array[i].location + " - " + array[i].timeZone);
@@ -19,14 +25,16 @@ function logHalf(array){
 function getStringValues(student){
     const strings = [];
     for (let key in student){
-        if (typeof student[key] === 'string'){
+        if (typeof student[key] === 'string' && student[key].length > 3){
             strings.push(student[key]);
         }
     }
     return strings;
 }
 
-// use a for in loop for a specific purpose
+// Problem #4 //
+
+
 
 // nest a for in loop in a for loop
 
