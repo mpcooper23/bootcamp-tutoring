@@ -586,7 +586,7 @@ for (let i = 0; i < users.length; i++){
 
 The first thing you will probably notice is that the nested for loop has a different countinv variable declared - `j`. This is because creating the same variable as the outer for loop will cause a lot of problems. 
 
-Again though, you can see the pattern. Our first for loop gives us the ability to access each index of the `users` array. Each iteration of that loop, we are then iterating through the current user's `purchases` property and loggin each purchase the console. This is another example where creating a variable can make your life easier.
+Again though, you can see the pattern. Our first for loop gives us the ability to access each index of the `users` array. Each iteration of that loop, we are then iterating through the current user's `purchases` property and logging each purchase to the console. This is another example where creating a variable can make your life easier.
 
 ```javascript
 const allPurchases = [];

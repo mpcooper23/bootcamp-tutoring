@@ -14,7 +14,7 @@ const students = [
                 observations: [
                     {
                         author: {
-                            name: 'Alex Aaron',
+                            name: 'Patricia West',
                             role: 'Instructor'
                         },
                         text: "Stephanie was absent from class due to her powering being out.",
@@ -68,7 +68,7 @@ const students = [
     {
         name: 'Nathan Coen',
         age: 36,
-        location: 'Atlanta, Georgia',
+        location: 'Atlanta, GA',
         timeZone: 'EST',
         courses: [
             {
@@ -79,7 +79,7 @@ const students = [
                 observations: [
                     {
                         author: {
-                            name: 'Alex Aaron',
+                            name: 'Patricia West',
                             role: 'Instructor'
                         },
                         text: 'He would benefit from asking more questions in class.',
@@ -108,6 +108,68 @@ const students = [
                         },
                         text: 'Nathan requested has met his midpoint requirements.',
                         dateObserved: '10/05/2023'
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        name: 'Kyle Bradley',
+        age: 41,
+        location: 'Baltimore, MD',
+        timeZone: 'EST',
+        courses: [
+            {
+                courseName: 'Prep',
+                status: 'Passed',
+                attempts: 1,
+                dateOfLastAttempt: '06/24/2022',
+                observations: [
+                    {
+                        author: {
+                            name: 'Patricia West',
+                            role: 'Instructor'
+                        },
+                        text: 'Had to reschedule interview.',
+                        dateObserved: '08/02/2022'
+                    },
+                ]
+            },
+            {
+                courseName: 'Bootcamp',
+                status: 'Passed',
+                attempts: 1,
+                dateOfLastAttempt: '08/09/2022',
+                observations: [
+                    {
+                        author: {
+                            name: 'Alex Aaron',
+                            role: 'Instructor'
+                        },
+                        text: "Completed work early and requested additional practice.",
+                        dateObserved: '09/16/2022'
+                    },
+                    {
+                        author: {
+                            name: 'Vanessa Jones',
+                            role: 'Student Success Coordinator'
+                        },
+                        text: "Requested to take exam early to accomodate personal matter."
+                    }
+                ]
+            },
+            {
+                courseName: 'Precourse',
+                status: 'Passed',
+                attempts: 1,
+                dateOfLastAttempt: '09/23/2022',
+                observations: [
+                    {
+                        author: {
+                            name: 'Vanessa Jones',
+                            role: 'Student Success Coordinator'
+                        },
+                        text: 'Requested OpSpark lapstop for the precourse.'
                     }
                 ]
             }
