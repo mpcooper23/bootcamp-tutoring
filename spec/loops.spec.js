@@ -75,5 +75,9 @@ describe('loops', function(){
                 });
             }
         });
+    });
+
+    describe("getStringValues", function(){
+        
     })
 });

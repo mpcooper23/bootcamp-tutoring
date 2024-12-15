@@ -19,12 +19,8 @@ Courses attempted: 2
 --
 */
 ```
-/*
-LOGS =>
-Baltimore, MD - EST
-Atlanta, GA - EST
-New Orleans, LA - EST
-New Orleans, LA - EST
-*/
 
+3. Create a function called `getStringValues` that takes in one parameter - `student` - which represents an individual student object like the ones in the students array in data.js. This function should use a for in loop to iterate through the input object and push any string values at each key into an output array. This function should return the output array of string values at the end.
+```javascript
+getStringValues(students[0]); // => [ 'Stephanie Cooper', 'New Orleans, LA', 'CST'];
 ```

@@ -16,8 +16,15 @@ function logHalf(array){
 }
 
 // Problem #3 //
-
-// iterate starting in the middle
+function getStringValues(student){
+    const strings = [];
+    for (let key in student){
+        if (typeof student[key] === 'string'){
+            strings.push(student[key]);
+        }
+    }
+    return strings;
+}
 
 // use a for in loop for a specific purpose
 
