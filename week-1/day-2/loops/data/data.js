@@ -1,8 +1,3 @@
-// sample array
-// hotSpotAvailability
-// transportation
-// newsLetterSubscription
-
 const students = [
     {
         name: 'Stephanie Cooper',
