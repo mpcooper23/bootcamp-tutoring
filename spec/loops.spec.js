@@ -40,6 +40,20 @@ describe('loops', function(){
         it('should not use the reverse() method', function(){
             assert.equal(logLocationAndTime.toString().includes(".reverse("), false);
         });
+        it('should use a for loop to iterate backwards', function(){
+            const func = logLocationAndTime.toString();
+            const regex1 = /for\s[(][a-z]{3}\s[a-zA-Z]+\s=\s[a-zA-Z]+.length\s-\s1;\s[a-zA-Z]\s>=\s0;\s[a-zA-Z][-]{2}[)]/g;
+            const regex2 = /for\s[(][a-z]{3}\s[a-zA-Z]+\s=\s[a-zA-Z]+.length\s-\s1;\s[a-zA-Z]+\s>\s-1;\si[-]{2}[)]/g;
+            const match1 = func.match(regex1);
+            const match2 = func.match(regex2);
+            let matches = [];
+            if (match1){
+                matches = matches.concat(match1);
+            } else if (match2){
+                matches = matches.concat(match2);
+            }
+            assert.equal(matches.length > 0, true);
+        })
     });
 
     describe("logHalf", function(){
@@ -91,6 +105,59 @@ describe('loops', function(){
             const func = getStringValues.toString();
             console.log(func.match(/for\s[(][a-z]{3}\s[a-zA-Z]+\sin\s[a-zA-Z]+[)]/g));
             assert.equal(func.match(/for\s[(][a-z]{3}\s[a-zA-Z]+\sin\s[a-zA-Z]+[)]/g).length > 0, true);
-        })
+        });
+    });
+
+    describe('createBooleanEntries', function(){
+        it('should return an array', function(){
+            assert.equal(Array.isArray(createBooleanEntries(students, 'Bethany Joseph')), true)
+        });
+        it('should return a correct array of boolean entries', function(){
+            assert.deepEqual(createBooleanEntries(students, 'Bethany Joseph'), [
+                ['hotSpotAvailability', true],
+                ['transportation', false],
+                ['newsLetterSubscription', true]
+            ]);
+        });
+        it('should use a for in loop', function(){
+            const func = createBooleanEntries.toString();
+            assert.equal(func.match(/for\s[(][a-z]{3}\s[a-zA-Z]+\sin\s[a-zA-Z]+[)]/g).length > 0, true);
+        });
+    });
+
+    describe("getCoursesByYear", function(){
+        it('should return an array', function(){
+            assert.equal(Array.isArray(getCoursesByYear(students, 2024)), true);
+        });
+        it('should return a correct array of objects based on the year', function(){
+            assert.deepEqual(getCoursesByYear(students, 2024), [
+                {
+                    studentName: 'Stephanie Cooper', 
+                    course: 'Prep', 
+                    status: 'Passed', 
+                    observations: 1
+                },
+                {
+                    studentName: 'Bethany Joseph', 
+                    course: 'Bootcamp', 
+                    status: 'Passed', 
+                    observations: 1
+                },
+            ]);
+        });
+        it('should use nested for loops', function(){
+            const regex1 = /for\s[(][a-zA-Z]+\s[a-zA-Z]+\s=\s0;\s[a-zA-Z]+\s<\s[a-zA-Z]+.length;\s[a-zA-Z]+[+][+][)]/g;
+            const regex2 = /for\s[(][a-z]{3}\s[a-zA-Z]+\s=\s0;\s[a-zA-Z]+\s<=\s[a-zA-Z]+.length\s-\s1;\s[a-zA-Z][+]{2}[)]/g;
+            const func = getCoursesByYear.toString();
+            const match1 = func.match(regex1);
+            const match2 = func.match(regex2);
+            let matches = [];
+            if (match1){
+                matches = matches.concat(match1);
+            } else if (match2){
+                matches = matches.concat(match2);
+            }
+            assert.equal(matches.length > 1, true);
+        });
     })
 });

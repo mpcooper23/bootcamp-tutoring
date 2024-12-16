@@ -1,16 +1,9 @@
 
 // Problem #1 //
-
-//regex to check standard backwards for loop
-// for\s[(][a-z]{3}\s[a-z]+\s=\s[a-zA-Z]+\.length\s-\s1;\si\s>=\s0;\si--[)]
-
-//regex to check backwards for loop where i > -1
-// for\s[(][a-z]{3}\s[a-z]+\s=\s[a-zA-Z]+\.length\s-\s1;\si\s>\s-1;\si--[)]
 function logLocationAndTime(array){
     for (let i = array.length - 1; i >= 0; i--){
         console.log(array[i].location + " - " + array[i].timeZone);
     }
-    
 }
 
 // Problem #2 //
@@ -33,11 +26,38 @@ function getStringValues(student){
 }
 
 // Problem #4 //
+function createBooleanEntries(array, name){
+    const output = [];
+    for (let i = 0; i < array.length; i++){
+        const obj = array[i];
+        if (obj.name === name){
+            for (let key in obj){
+                if (typeof obj[key] === 'boolean'){
+                    const sub = [key, obj[key]];
+                    output.push(sub);
+                }
+            }
+        }
+    }
+    return output;
+}
 
-
-
-// nest a for in loop in a for loop
-
-// nest for loops in each other
-
-// 
+// Problem #5 //
+function getCoursesByYear(array, year){
+    const output = [];
+    for (let i = 0; i < array.length; i++){
+        const courses = array[i].courses;
+        for (let j = 0; j < courses.length; j++){
+            if (courses[j].dateOfLastAttempt.includes(year)){
+                const obj = {
+                    studentName: array[i].name,
+                    course: courses[j].courseName,
+                    status: courses[j].status,
+                    observations: courses[j].observations.length,
+                }
+                output.push(obj);
+            }
+        }
+    }
+    return output;
+}

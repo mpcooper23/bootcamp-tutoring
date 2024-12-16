@@ -1,10 +1,17 @@
 // sample array
+// hotSpotAvailability
+// transportation
+// newsLetterSubscription
+
 const students = [
     {
         name: 'Stephanie Cooper',
         age: 37,
         location: 'New Orleans, LA',
         timeZone: 'CST',
+        hotSpotAvailability: true,
+        transportation: true,
+        newsLetterSubscription: false,
         courses: [
             {
                 courseName: 'Prep',
@@ -29,6 +36,9 @@ const students = [
         age: 35,
         location: 'New Orleans, LA',
         timeZone: 'CST',
+        hotSpotAvailability: true,
+        transportation: false,
+        newsLetterSubscription: true,
         courses: [
             {
                 courseName: 'Prep',
@@ -51,7 +61,7 @@ const students = [
                 courseName: 'Bootcamp',
                 status: 'Passed',
                 attempts: 1,
-                dateOfLastAttempt: '09/15/2023',
+                dateOfLastAttempt: '09/15/2024',
                 observations: [
                     {
                         author: {
@@ -59,7 +69,7 @@ const students = [
                             role: 'Student Success Coordinator'
                         },
                         text: 'Bethany is up to date with her WIOA requirements.',
-                        dateObserved: '08/21/2023'
+                        dateObserved: '08/21/2024'
                     }
                 ]
             }
@@ -70,6 +80,9 @@ const students = [
         age: 36,
         location: 'Atlanta, GA',
         timeZone: 'EST',
+        hotSpotAvailability: true,
+        transportation: true,
+        newsLetterSubscription: true,
         courses: [
             {
                 courseName: 'Prep',
@@ -118,6 +131,9 @@ const students = [
         age: 41,
         location: 'Baltimore, MD',
         timeZone: 'EST',
+        hotSpotAvailability: true,
+        transportation: true,
+        newsLetterSubscription: false,
         courses: [
             {
                 courseName: 'Prep',
