@@ -4,14 +4,12 @@
 
 // every function should be an arrow function
 
-// use destructuring to declare variables
-
 // using 
 
-// destructuring on an individual student object
-let getInfoString = (film) => {
-    const { title, year, director } = film;
-    return `${title} (${year}) - directed by ${director.name}`;
-}
+// Problem #1 // use destructuring on a single object
+let getInfoString;
+
+
+
 
 // destructuring on each object using a for loop

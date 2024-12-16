@@ -23,8 +23,23 @@ describe("ES6 Features", function(){
         });
         it('should utilize template literal sytax', function(){
             const func = getInfoString.toString();
-            const regex1 = ?;
-            const regex2 = ?;
+            const regex1 = /`(?=[$])[$]{[a-zA-Z]+}\s[(][$]{[a-zA-Z]+}[)]\s-\s[a-z]+\s[a-z]+\s[$]{[a-zA-Z]+.name}`/g
+            const regex2 = /`(?=[$])[$]{[a-zA-Z]+}\s[(][$]{[a-zA-Z]+}[)]\s-\s[a-z]+\s[a-z]+\s[$]{([a-zA-Z]+.name|[a-zA-Z]+)}`/g;
+            const match1 = func.match(regex1);
+            const match2 = func.match(regex2);
+            console.log(match2);
+            let matches = [];
+            console.log(match1);
+            console.log(match2);
+            console.log(matches);
+            if (match1){
+                console.log('hit this condition')
+                matches = matches.concat(match1);
+            } else if (match2){
+                console.log('hit this condition');
+                matches = matches.concat(match2);
+            }
+            assert.equal(matches.length > 0, true);
         });
     });
 });
