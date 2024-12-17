@@ -6,7 +6,7 @@ console.log(student)
 
 /**
  * I: Inputs an object
- * O: returns first prep observation
+ * O: returns first prep observation, followed by the date it was made
  * C:
  * E: N/A
  *
