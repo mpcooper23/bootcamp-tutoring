@@ -8,12 +8,10 @@
  * E: N/A
  *
  */
-console.log(object)
+
 function getFirstPrepObservation(object){
     console.log(object.courses)
-
-
-   return object.courses[Prep].observations.text + object.courses[Prep].observations.dateObserved
+   return object.courses[0]['courseName'].observations.text + object.courses[0]['courseName'].observations.dateObserved
 }
 /**
  * I: object
