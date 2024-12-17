@@ -1,23 +1,49 @@
-// Problem #1 //
-function getFirstPrepObservation(object){
-    
-}
+console.log(student)
 
+
+
+// Problem #1 //
+
+/**
+ * I: Inputs an object
+ * O: returns first prep observation
+ * C:
+ * E: N/A
+ *
+ */
+
+function getFirstPrepObservation(object){
+   return object.
+}
+/**
+ * 
+ *
+ */
 // Problem #2 //
 function getLastObservationAuthor(object){
     
 }
-
+/**
+ * 
+ *
+ */
 // Problem #3 //
 function getLastCourseNameAndStatus(object){
     
 }
-
+/**
+ * 
+ *
+ */
 // Problem #4 //
 function createSimplifiedObject(object){
     
 }
 
+/**
+ * 
+ *
+ */
 // Problem #5 //
 function createString(object){
     
