@@ -47,10 +47,26 @@ function getLastCourseNameAndStatus(object){
 /**
  * 
  *
+ * 4. Let's say we want to create a simpler student object. 
+ * Create a function called `createSimplifiedObject` that 
+ * takes in one parameter - `object` - which represents a student
+ *  object like the one featured in data.js. This function should 
+ * return a new object that looks like this...
+
+ * I:object 
+* O:simplified object
+
  */
 // Problem #4 //
+
+
 function createSimplifiedObject(object){
-    
+    return {
+name: 'firstName' + 'lastName',
+age: 'age',
+location: 'city'+ 'state',
+classes: 'classes'.length
+    }
 }
 
 /**
