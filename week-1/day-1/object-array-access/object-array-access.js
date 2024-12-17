@@ -31,13 +31,19 @@ function getLastObservationAuthor(object){
    return object.courses[1].observations[1].author.name + " - " + object.courses[1].observations[1].author.role
 }
 /**
- * 
+ * Create a function called `getLastCourseNameAndStatus` that takes in one parameter - `object`, 
+ * which represents a student object like the one featured in data.js. This function should use 
+ * the principles of object and array access to return a string of the last course the user has 
+ * taken followed by a dash and the course's status (assume the last course in the user's courses array is last chronologically).
+ * I: object
+ * O: last course user took "-" course status
+ * C:
+ * E://
  *
  */
 // Problem #3 //
 function getLastCourseNameAndStatus(object){
-    
-}
+    return object.courses[1].courseName + " - " + object.courses[1].status }
 /**
  * 
  *
