@@ -1,6 +1,3 @@
-console.log(student)
-
-
 
 // Problem #1 //
 
@@ -13,10 +10,17 @@ console.log(student)
  */
 
 function getFirstPrepObservation(object){
-   return object.courses['Prep'].observations.text + object.courses['Prep'].observations.dateObserved
+    console.log(object.courses)
+
+
+   return object.courses[Prep].observations.text + object.courses[Prep].observations.dateObserved
 }
 /**
- * 
+ * I: object
+ * O: a string of the name and role of the author of the
+ * student's last observation from the last phase they attempted
+ * C:
+ * E:
  *
  */
 // Problem #2 //
