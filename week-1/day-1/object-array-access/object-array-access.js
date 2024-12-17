@@ -62,10 +62,10 @@ function getLastCourseNameAndStatus(object){
 
 function createSimplifiedObject(object){
     return {
-'name': object.firstName + object.lastName,
-'age': object.age,
-'location': object.city+ object.state,
-'classes': object.classes.length
+//'name': object.firstName + object.lastName,
+//'age': object.age,
+//'location': object.city+ object.state,
+//'classes': object.classes.length
     }
 }
 
