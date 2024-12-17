@@ -28,7 +28,7 @@ function getFirstPrepObservation(object){
  */
 // Problem #2 //
 function getLastObservationAuthor(object){
-   return object.courses[object.courses.length - 1].observations[0].name + object.courses[object.courses.length - 1].observations[0].role
+   return object.courses[1].observations[1].author.name + " - " + object.courses[1].observations[1].author.role
 }
 /**
  * 
