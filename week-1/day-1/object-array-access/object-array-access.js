@@ -13,7 +13,7 @@ console.log(student)
  */
 
 function getFirstPrepObservation(object){
-   return object.courses['Prep'].observations
+   return object.courses['Prep'].observations.text + " " + object.courses['Prep'].observations.dateObserved
 }
 /**
  * 
