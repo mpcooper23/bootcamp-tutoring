@@ -10,10 +10,7 @@
  */
 
 function getFirstPrepObservation(object){
-    console.log(object.courses[0]['courseName'].observations)
-    
-
-
+    console.log(object.courses[0])
    return object.courses[0]['courseName'].observations.text + object.courses[0]['courseName'].observations.dateObserved
 }
 /**
