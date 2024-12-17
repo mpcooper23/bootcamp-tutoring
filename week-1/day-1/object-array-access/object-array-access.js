@@ -10,7 +10,6 @@
  */
 
 function getFirstPrepObservation(object){
-    console.log(object.courses[0])
    return object.courses[0].observations[0].text + " - " + object.courses[0].observations[0].dateObserved
 }
 /**
@@ -23,13 +22,13 @@ function getFirstPrepObservation(object){
  * I: object
  * O: a string of the name and role of the author of the
  * student's last observation from the last phase they attempted
- * C: Don't hardcode last array element in courses (i.e. use courses.length - 1)
+ * C: Don't hardcode last array element in courses (i.e. use object.courses.length - 1)
  * E:
  *
  */
 // Problem #2 //
 function getLastObservationAuthor(object){
-    
+   return object.courses[object.courses.length - 1].observations[0].name + object.courses[object.courses.length - 1].observations[0].role
 }
 /**
  * 
