@@ -8,7 +8,7 @@
  * E: N/A
  *
  */
-
+console.log(object)
 function getFirstPrepObservation(object){
     console.log(object.courses)
 
