@@ -25,8 +25,34 @@ function logLocationAndTime(array){
 }
 
 // Problem #2 //
+/**
+ * 2. Create a function called `logHalf` that takes in one parameter - `array` - 
+ * which represents an array of student objects like the one featured in data.js. 
+ * This function should use a for loop to only iterate through HALF of the input 
+ * array and log each student's name followed by a dash and the number of courses 
+ * they have attempted and ending with two dashes. For the purposes of this function, 
+ * assume the length of the input array will always be even.
+```javascript
+logHalf(students);
+/*
+LOGS =>
+Stephanie Cooper
+Courses attempted: 1
+--
+Bethany Joseph
+Courses attempted: 2
+--
+
+I: array of objects
+O: log each student's name followed by dash and the number of courses they have attempted; end w two dashes
+C: use for loop to iterate through HALF of array (assume array is even)
+E:
+*/
+ 
 function logHalf(array){
-    
+    for (let i = 0; i >= array.length / 2; i++){
+console.log(array[i].name + ' - ' + 'Number of courses: ' + array[i].courses.length)
+    }
 }
 
 // Problem #3 //
