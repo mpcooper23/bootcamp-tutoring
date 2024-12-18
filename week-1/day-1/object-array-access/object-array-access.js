@@ -52,6 +52,14 @@ function getLastCourseNameAndStatus(object){
  * takes in one parameter - `object` - which represents a student
  *  object like the one featured in data.js. This function should 
  * return a new object that looks like this...
+ * 
+ * RETURNS => 
+{
+    name: 'Nathan Coen',
+    age: 36,
+    location: "Atlanta, Georgia",
+    courses: 2,
+}
 
  * I:object 
 * O:simplified object
@@ -62,10 +70,10 @@ function getLastCourseNameAndStatus(object){
 
 function createSimplifiedObject(object){
     return {
-name: object.firstName + object.lastName,
+name: object.firstName + ' ' + object.lastName,
 age: object.age,
-location: object.city + object.state,
-classes: object.classes
+location: object.city + ', ' + object.state,
+courses: object.courses.length
     }
 }
 
