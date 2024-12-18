@@ -67,6 +67,13 @@ console.log(array[i].name + '\n' + 'Courses attempted: ' + array[i].courses.leng
 ```javascript
 // example output
 getStringValues(students[0]); // => [ 'Stephanie Cooper', 'New Orleans, LA']; 
+
+I: individual student object
+O: array of all string values in object
+C: for-in loop, conditional if statement to check for string data value
+E:
+
+
  */
 
 function getStringValues(student){
