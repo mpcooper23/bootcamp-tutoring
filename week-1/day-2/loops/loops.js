@@ -44,14 +44,14 @@ Courses attempted: 2
 --
 
 I: array of objects
-O: log each student's name followed by dash and the number of courses they have attempted; end w two dashes
+O: log each student's name followed by /n and the number of courses they have attempted; end w two dashes
 C: use for loop to iterate through HALF of array (assume array is even)
 E:
 */
  
 function logHalf(array){
-    for (let i = 0; i >= array.length / 2; i++){
-console.log(array[i].name + ' - ' + 'Number of courses: ' + array[i].courses.length)
+    for (let i = 0; i > array.length / 2; i++){
+console.log(array[i].name + '\n' + 'Number of courses: ' + array[i].courses.length)
     }
 }
 
