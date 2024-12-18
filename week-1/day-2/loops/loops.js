@@ -127,7 +127,13 @@ return output;
 
 /**
  * 
- * 5. Create a function called `getCoursesByYear` that takes in two parameters - `array`, `year`; `array` represents an array of student objects like the one featured in data.js; `year` represents a string of a year (example: '2024'). This function should use a for loop to iterate through the input array and then use a nested for loop to iterate through each student's courses array. For each course that was last attempted in the input `year`, the function should create an object that looks like this:
+ * 5. Create a function called `getCoursesByYear` that takes in two parameters - `array`, `year`; 
+ * `array` represents an array of student objects like the one featured in data.js; 
+ * `year` represents a string of a year (example: '2024'). This function should 
+ * use a for loop to iterate through the input array and then use a nested for loop 
+ * to iterate through each student's courses array. 
+ * For each course that was last attempted in the input `year`, the function should 
+ * create an object that looks like this:
 ```javascript
 {
     studentName: <name of student>,
@@ -156,6 +162,13 @@ RETURNS =>
         observations: 1
     },
 ]
+
+I: takes in an array of student objects, andstring data that represents a year 
+O: each new object should be pushed into output array
+C: use a for loop to iterate through the input array and then use a nested for loop 
+ * to iterate through each student's courses array
+E:
+
 */
 
 function getCoursesByYear(array, year){
