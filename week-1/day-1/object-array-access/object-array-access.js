@@ -79,11 +79,27 @@ courses: object.courses.length
 
 /**
  * 
- *
+ *Create a function called `createString` that takes in one parameter - `object` - 
+ which represents a student object like the one featured in data.js. This function 
+ should use the principles of object and array access to create a string like this:
+
+```javascript
+// example output
+createString(student); // => "Nathan C.\nState & Time Zone: Georgia - EST\nDate of Last Course: 09/15/2023 (Bootcamp)\n"
+/*
+LOGS =>
+
+Nathan C.
+State & Time Zone: Georgia - EST,
+Date of Last Course: 09/15/2023 (Bootcamp)
+ * 
+ * 
  */
+
 // Problem #5 //
+
 function createString(object){
-    
+    return object.firstName +  object.lastName[0] + '.' + '\n' + 'State & Time Zone:' + object.state + ' - ' + object.timeZone + ',' + '\n' + 'Date of Last Course:' + object.courses[1].dateOfLastAttempt + ' ' + '(' + object.courses[1].courseName + '\n'
 }
 
 
