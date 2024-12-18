@@ -112,8 +112,14 @@ E:
 
 function createBooleanEntries(array, name){
     const output = []
-
-    return output;
+for (let i = 0; i < array.length; i++){
+    if(array[i].name === name){
+        for (let key in object){
+            output.push(object[key])
+        }
+    }
+return output;
+}
 }
 
 // Problem #5 //
