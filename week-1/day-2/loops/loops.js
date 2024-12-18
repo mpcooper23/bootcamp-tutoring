@@ -77,7 +77,12 @@ E:
  */
 
 function getStringValues(student){
-    
+    let studentStr = [];
+    for (let key in student){
+        if (typeof student[key] === "string"){
+studentStr.push(student[key])
+        }
+    }
 }
 
 // Problem #4 //
