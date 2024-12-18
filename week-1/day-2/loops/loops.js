@@ -102,10 +102,18 @@ studentStr.push(student[key])
 ```javascript
 // example output
 createBooleanEntries(students, 'Bethany Joseph'); // => [['hotSpotAvailability', true], ['transportation', false], ['newsLetterSubscription', true]]
- */
+
+I: array of objects and a name string data, which contains student's name
+O:
+C: for loop, nested for-in loop
+E:
+
+*/
 
 function createBooleanEntries(array, name){
-    
+    const output = []
+
+    return output;
 }
 
 // Problem #5 //
