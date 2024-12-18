@@ -99,7 +99,7 @@ Date of Last Course: 09/15/2023 (Bootcamp)
 // Problem #5 //
 
 function createString(object){
-    return object.firstName +  object.lastName[0] + '.' + '\n' + 'State & Time Zone:' + object.state + ' - ' + object.timeZone + ',' + '\n' + 'Date of Last Course:' + object.courses[1].dateOfLastAttempt + ' ' + '(' + object.courses[1].courseName + '\n'
+    return object.firstName + ' ' + object.lastName[0] + '.' + '\n' + 'State & Time Zone:' + ' ' + object.state + ' - ' + object.timeZone + '\n' + 'Date of Last Course:' + ' ' + object.courses[1].dateOfLastAttempt + ' ' + '(' + object.courses[1].courseName + ')' + '\n'
 }
 
 
