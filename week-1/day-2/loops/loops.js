@@ -104,7 +104,8 @@ studentStr.push(student[key])
 createBooleanEntries(students, 'Bethany Joseph'); // => [['hotSpotAvailability', true], ['transportation', false], ['newsLetterSubscription', true]]
 
 I: array of objects and a name string data, which contains student's name
-O:
+O: "subarrays" of the key and value of each object (which includes both key and value) 
+that is then pushed into the outlet array
 C: for loop, nested for-in loop
 E:
 
