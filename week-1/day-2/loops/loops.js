@@ -105,7 +105,7 @@ createBooleanEntries(students, 'Bethany Joseph'); // => [['hotSpotAvailability',
 
 I: array of objects and a name string data, which contains student's name
 O: "subarrays" of the key and value of each object (which includes both key and value) 
-that is then pushed into the outlet array
+that also has a boolean value attached; these elements are then pushed into the outlet array
 C: for loop, nested for-in loop
 E:
 
@@ -116,7 +116,7 @@ function createBooleanEntries(array, name){
 for (let i = 0; i < array.length; i++){
     if(array[i].name === name){
         for (let key in object){
-            output.push(object[key])
+            output.push([key, object[key]], array[i].name === name ? true: false)
         }
     }
 return output;
