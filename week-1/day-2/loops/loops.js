@@ -50,8 +50,8 @@ E:
 */
  
 function logHalf(array){
-    for (let i = 0; i > array.length / 2; i++){
-console.log(array[i].name + '\n' + 'Number of courses: ' + array[i].courses.length)
+    for (let i = 0; i >= array.length / 2; i++){
+console.log(array[i].name + '\n' + 'Courses attempted: ' + array[i].courses.length + '\n' + '--')
     }
 }
 
