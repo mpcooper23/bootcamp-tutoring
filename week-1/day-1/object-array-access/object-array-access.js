@@ -62,7 +62,8 @@ function getLastCourseNameAndStatus(object){
 }
 
  * I:object 
-* O:simplified object
+* O:simplified object: keys should include name, age, location, and 
+number of courses.
 
  */
 // Problem #4 //
