@@ -69,7 +69,7 @@ console.log(array[i].name + '\n' + 'Courses attempted: ' + array[i].courses.leng
 getStringValues(students[0]); // => [ 'Stephanie Cooper', 'New Orleans, LA']; 
 
 I: individual student object
-O: array of all string values in object
+O: array of all string values in object, but only if they have a length of over 3
 C: for-in loop, conditional if statement to check for string data value
 E:
 
@@ -79,10 +79,11 @@ E:
 function getStringValues(student){
     let studentStr = [];
     for (let key in student){
-        if (typeof student[key] === "string"){
+        if (typeof student[key] === "string" && student[key].length > 3){
 studentStr.push(student[key])
         }
     }
+    return studentStr
 }
 
 // Problem #4 //
