@@ -37,13 +37,15 @@ let getInfoString = (film) => {
 ```javascript
 
 I: object data type called <films> and <newTag>
-O:
+O: 
 C: destructure films; arrow syntax for func; spread operator
 E:
 
  */
 
-let getNewGenreTagsArray;
+let getNewGenreTagsArray = (films) => {
+   const [genreTags] = films //destructure array
+}
 
 // Problem #3 // using spread operator to create a copy of an object
 /**
