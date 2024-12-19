@@ -115,12 +115,16 @@ function createBooleanEntries(array, name){
     const output = []
 for (let i = 0; i < array.length; i++){
     if(array[i].name === name){
-        for (let key in object){
-            output.push([key, object[key]], array[i].name === name ? true: false)
+        for (let key in array[i]){
+            output.push([key, array[i][key], true])
+        }
+    }else {
+        for(let key in array[i]){
+            output.push([key, array[i][key], false])
         }
     }
-return output;
 }
+return output;
 }
 
 // Problem #5 //
@@ -164,10 +168,10 @@ RETURNS =>
 ]
 
 I: takes in an array of student objects, and string data that represents a year 
-O: For each course that was last attempted in the input `year`, the function should 
- * create an object and each new object should be pushed into output array
+O: For each course that was last attempted in the input `year` (use conditional if statement?), 
+the function should create an object and each new object should be pushed into output array
 C: use a for loop to iterate through the input array and then use a nested for loop 
- * to iterate through each student's courses array
+ to iterate through each student's courses array
 E:
 
 */
@@ -175,17 +179,18 @@ E:
 function getCoursesByYear(array, year){
     let newArr = [];
     for (let i = 0; i < array.length; i++){
-        for (let j = 0; j < array[i].length; j++){
+        for (let j = 0; j < array[i].courses.length; j++){
+            if(array[i].courses[j].lastAttempted === year){
             let newObj = {
-                studentName: array[i].name,
-                course: courses[j].courseName,
-                status: courses[j].status,
-             observations: courses[j].observations.length
+        studentName: array[i].name,
+                course: array[i].courses[j].courseName,
+                status: array[i].courses[j].status,
+             observations: array[i].courses[j].observations.length
             };
             newArr.push(newObj)
         }
-       
     }
+}
 
     return newArr 
 }
