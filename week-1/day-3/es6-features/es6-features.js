@@ -63,7 +63,9 @@ C:
 E:
 */
 
-let getNewObject;
+let getNewObject = (film) => {
+    
+}
 
 // Problem #4 // destructuring on each object using a for loop
 /**
@@ -85,7 +87,9 @@ C:
 E:
 */
 
-let printAwards;
+let printAwards = (film) => {
+    
+}
 
 // Problem #5 // use destructing on an array of arrays
 /**
@@ -122,4 +126,6 @@ E:
             */
 
 
-let updateAward;
+let updateAward = (film) => {
+    
+}
