@@ -116,11 +116,12 @@ function createBooleanEntries(array, name){
 for (let i = 0; i < array.length; i++){//create loop to search for name
     if(array[i].name === name){//check if current loop item's name === name input
         for (let key in array[i]){//for in loop to access each property in outer loop
-            if (typeof array[i][key] === 'boolean')
+            if (typeof array[i][key] === 'boolean'){
             output.push([key, array[i][key]])
+                }
+             }
         }
     }
-}
 return output;
 }
 
