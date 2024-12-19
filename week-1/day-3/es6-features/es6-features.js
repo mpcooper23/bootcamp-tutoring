@@ -10,14 +10,18 @@
 // example output
 getInfoString(films[1]); // => "Blue Velvet (1986) - diredted by David Lynch"
 
-I:
-O:
-C:
+I: object type that reps film
+O: string with dash to separate <title/date> - <director>
+C: destructure to create 'title', 'year', 'director'; template literal with dash;
+use arrow syntax for func
 E:
 
  */
 
-let getInfoString;
+let getInfoString = (film) => {
+    films = {title, year, director}//destructure obj
+    return `${title} (${year}) - directed by ${director}`//returning template literal
+}
 
 // Problem #2 // using spread operator on a simple array
 /**
