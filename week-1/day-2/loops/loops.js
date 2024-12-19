@@ -180,7 +180,7 @@ function getCoursesByYear(array, year){
     let newArr = [];
     for (let i = 0; i < array.length; i++){
         for (let j = 0; j < array[i].courses.length; j++){
-            if(array[i].courses[j].lastAttempted === year){
+            if(array[i].courses[j].dateOfLastAttempt === year){
             let newObj = {
         studentName: array[i].name,
                 course: array[i].courses[j].courseName,
