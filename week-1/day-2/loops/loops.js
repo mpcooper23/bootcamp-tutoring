@@ -50,7 +50,7 @@ E:
 */
  
 function logHalf(array){
-    for (let i = 0; i >= array.length / 2; i++){
+    for (let i = 0; i < Math.floor(array.length / 2); i++){ //why Math.floor()?
 console.log(array[i].name + '\n' + 'Courses attempted: ' + array[i].courses.length + '\n' + '--')
     }
 }
@@ -163,8 +163,9 @@ RETURNS =>
     },
 ]
 
-I: takes in an array of student objects, andstring data that represents a year 
-O: each new object should be pushed into output array
+I: takes in an array of student objects, and string data that represents a year 
+O: For each course that was last attempted in the input `year`, the function should 
+ * create an object and each new object should be pushed into output array
 C: use a for loop to iterate through the input array and then use a nested for loop 
  * to iterate through each student's courses array
 E:
@@ -172,5 +173,19 @@ E:
 */
 
 function getCoursesByYear(array, year){
-    
+    let newArr = [];
+    for (let i = 0; i < array.length; i++){
+        for (let j = 0; j < array[i].length; j++){
+            let newObj = {
+                studentName: array[i].name,
+                course: courses[j].courseName,
+                status: courses[j].status,
+             observations: courses[j].observations.length
+            };
+            newArr.push(newObj)
+        }
+       
+    }
+
+    return newArr 
 }
