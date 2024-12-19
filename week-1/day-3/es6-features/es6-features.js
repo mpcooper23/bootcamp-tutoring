@@ -36,9 +36,9 @@ let getInfoString = (film) => {
  * the function.
 ```javascript
 
-I:
+I: object data type called <films> and <newTag>
 O:
-C:
+C: destructure films; arrow syntax for func; spread operator
 E:
 
  */
