@@ -19,8 +19,8 @@ E:
  */
 
 let getInfoString = (film) => {
-    films = {title, year, director}//destructure obj
-    return `${title} (${year}) - directed by ${director}`//returning template literal
+    const { title, year, director } = film //destructure obj
+ return `${title} (${year}) - directed by ${director.name}`//returning template literal
 }
 
 // Problem #2 // using spread operator on a simple array
