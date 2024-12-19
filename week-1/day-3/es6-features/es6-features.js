@@ -43,7 +43,7 @@ E:
 
  */
 
-let getNewGenreTagsArray = (films) => {
+let getNewGenreTagsArray = (film) => {
    const [genreTags] = films //destructure array
 }
 
