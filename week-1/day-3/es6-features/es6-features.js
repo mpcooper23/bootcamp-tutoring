@@ -37,14 +37,16 @@ let getInfoString = (film) => {
 ```javascript
 
 I: object data type called <films> and <newTag>
-O: 
+O: return new array of genre tags with a new tag added
 C: destructure films; arrow syntax for func; spread operator
 E:
 
  */
 
-let getNewGenreTagsArray = (film) => {
-   const [genreTags] = films //destructure array
+let getNewGenreTagsArray = (film, newTag) => {
+   const { genreTags } = film; //destructure array
+   const newGenreTags = [ ...genreTags, newTag ]//spread operator
+   return newGenreTags //return new array
 }
 
 // Problem #3 // using spread operator to create a copy of an object
@@ -88,12 +90,15 @@ C: destructuring, template literal syntax, arrow func, two for loops
 E:
 */
 
-let printAwards = (film) => {
-    for (let i = 0; i < film.length; i++){
-    const { filmTitle, category, status } = film[i] //destructure obj
-
+let printAwards = (films, director) => {
+    for (let i = 0; i < films.length; i++){
+        if(films[i].director === director){
+            for(let j = 0; j < films[i].academyAwards.length; j++){
+    const { filmTitle, category, status } = films[i].academyAwards[j] //destructure obj
+           console.log(`${status}: ${filmTitle} - ${category}`)
+         }
     }
-    return ``
+}
 }
 
 // Problem #5 // use destructing on an array of arrays
