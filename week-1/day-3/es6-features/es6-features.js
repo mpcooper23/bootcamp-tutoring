@@ -129,7 +129,8 @@ RETURNS =>
                 status: 'NOMINATION'
             };
 
-I:
+I:4 parameters - `film`, `nominatedFilm`, `category`, `updates`; `film` represents a film object 
+(like the ones in the `films` array in the data.js file)
 O:
 C:
 E:
