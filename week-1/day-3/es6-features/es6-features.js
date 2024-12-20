@@ -57,14 +57,15 @@ let getNewGenreTagsArray = (film) => {
  * copy is made, the function should add the new key and the value attached to 
  * that key to the copy and then return it.
 
-I:
-O:
-C:
+I: film (object data), new <key> to be added, new <value> to be added
+O: return object copy with new key and value added
+C: spread operator to make a non-destructive copy of input
 E:
 */
 
 let getNewObject = (film) => {
-    
+    const newObj = {...film}
+    return newObj
 }
 
 // Problem #4 // destructuring on each object using a for loop
@@ -81,14 +82,18 @@ let getNewObject = (film) => {
  * followed by a colon and the title of the film and category it was nominated in.
 ```javascript
 
-I:
-O:
-C:
+I: films, which is an array; director, which is string data
+O: template literal string of each award's status followed by a : 'film title' 'category'
+C: destructuring, template literal syntax, arrow func, two for loops
 E:
 */
 
 let printAwards = (film) => {
-    
+    for (let i = 0; i < film.length; i++){
+    const { filmTitle, category, status } = film[i] //destructure obj
+
+    }
+    return ``
 }
 
 // Problem #5 // use destructing on an array of arrays
