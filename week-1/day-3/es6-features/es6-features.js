@@ -44,7 +44,7 @@ E:
  */
 
 let getNewGenreTagsArray = (film, newTag) => {
-   const { genreTags } = film; //destructure array
+    const { genreTags } = film; //destructure array
    const newGenreTags = [ ...genreTags, newTag ]//spread operator
    return newGenreTags //return new array
 }
@@ -129,7 +129,7 @@ RETURNS =>
                 status: 'NOMINATION'
             };
 
-I:4 parameters - `film`, `nominatedFilm`, `category`, `updates`; `film` represents a film object 
+I:4 parameters - `film`, `nominatedFilm` (string data), `category`, `updates`; `film` represents a film object 
 (like the ones in the `films` array in the data.js file)
 O:
 C:
@@ -137,6 +137,18 @@ E:
             */
 
 
-let updateAward = (film) => {
-    
+let updateAward = (film, nominatedFilm, category, updates) => {
+    let updatedNomination = null //placeholder null
+    for (let i = 0; i < film.academyAwards.length; i++){
+        const nomination = film.academyAwards[i]
+        if(nomination.filmTitle === nominatedFilm && nomination.category === category){
+            updatedNomination = { ...nomination };
+        }
+    }
+    if(updatedNomination){
+        for(let [key, value] of updates){
+            updatedNomination[key] = value;
+        }
+    }
+    return updatedNomination;
 }
