@@ -140,15 +140,19 @@ E:
 let updateAward = (film, nominatedFilm, category, updates) => {
     let updatedNomination = null //placeholder null
     for (let i = 0; i < film.academyAwards.length; i++){
-        const nomination = film.academyAwards[i]
+        const nomination = film.academyAwards[i];
         if(nomination.filmTitle === nominatedFilm && nomination.category === category){
             updatedNomination = { ...nomination };
+            break;
         }
     }
     if(updatedNomination){
-        for(let [key, value] of updates){
-            updatedNomination[key] = value;
+        for(let key in updates){
+            if(updatedNomination){
+            if (updates,hasOwnProperty(key)){
+            updatedNomination[key] = updates[key];
+            }
         }
     }
     return updatedNomination;
-}
+}}
