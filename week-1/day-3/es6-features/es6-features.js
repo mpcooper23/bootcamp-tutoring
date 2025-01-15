@@ -137,22 +137,22 @@ E:
             */
 
 
-let updateAward = (film, nominatedFilm, category, updates) => {
-    let updatedNomination = null //placeholder null
-    for (let i = 0; i < film.academyAwards.length; i++){
+function updateAward(film, nominatedFilm, category, updates) {
+    let updatedNomination = null;
+
+    for (let i = 0; i < film.academyAwards.length; i++) {
         const nomination = film.academyAwards[i];
-        if(nomination.filmTitle === nominatedFilm && nomination.category === category){
+        if (nomination.filmTitle === nominatedFilm && nomination.category === category) {
             updatedNomination = { ...nomination };
             break;
         }
     }
-    if(updatedNomination){
-        for(let key in updates){
-            if(updatedNomination){
-            if (updates,hasOwnProperty(key)){
-            updatedNomination[key] = updates[key];
-            }
+
+    if (updatedNomination) {
+        for (let [key, value] of updates) {
+            updatedNomination[key] = value;
         }
     }
+
     return updatedNomination;
-}}
+}
