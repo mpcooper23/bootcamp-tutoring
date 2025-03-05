@@ -7,11 +7,30 @@
  * C:
  * E: N/A
  *
- */
+ 
 
 function getFirstPrepObservation(object){
    return object.courses[0].observations[0].text + " - " + object.courses[0].observations[0].dateObserved
+}/*
+1. Create a function called `getFirstPrepObservation` that takes in one parameter - `object` - which 
+represents a student object like the one featured in the data.js file. This function should use the 
+principles of object and array access to return a string of the text of the student's first observation 
+from the Prep phase (assume all students will have a Prep observation) followed by the date the observation 
+was made.*/
+
+function getFirstObservation(object){
+return object.courses.filter(course => {course.length - 1})
 }
+
+
+
+
+
+
+
+
+
+
 /**
  * 2. Create a function called `getLastObservationAuthor` that takes in one parameter
  *  - `object` - which represents a student object like the one featured in the data.js file. 
