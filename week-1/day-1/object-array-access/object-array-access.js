@@ -19,12 +19,10 @@ O: string of teh student's first obs from Prep followed by date obs was made
 
 */
 
-
 function getFirstPrepObservation(object){
  if (student.courses[0].courseName = 'Prep'){
     let date = student.courses[0].observations[0].dateObserved;
     let text = student.courses[0].observations[0].text
-    console.log(text)
     return `${text} - ${date}`
  }
 }
@@ -42,8 +40,28 @@ function getFirstPrepObservation(object){
  * name and role of the author of the student's last observation from the last phase they have 
  * attempted (assume the last object in the courses array is the last one chronologically). 
  * You SHOULD NOT HARDCODE
+ * 
+ * i: object
+ * o: string of name, role of the author of the student's last observation 
  */
-// Problem #2 //
+
+
+// Problem #2 //*
+
+
+
+
+function getLastObservationAuthor(object){
+
+let lastClass = object.courses[object.courses.length - 1];
+let lastObs = lastClass.observations[lastClass.observations.length -1]
+let lastAuthor = lastObs.author.name
+let lastRole = lastObs.author.role
+
+return `${lastAuthor} - ${lastRole}`
+}
+
+
 
 /**
  * Create a function called `getLastCourseNameAndStatus` that takes in one parameter - `object`, 
@@ -57,8 +75,11 @@ function getFirstPrepObservation(object){
  *
  */
 // Problem #3 //
-
-
+function getLastCourseNameAndStatus(object){
+let lastCourse = object.courses[object.courses.length - 1].courseName;
+let lastStatus = object.courses[object.courses.length - 1].status;
+return `${lastCourse} - ${lastStatus}`
+}
 /**
  * 
  *
