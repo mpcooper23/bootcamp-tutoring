@@ -104,7 +104,14 @@ number of courses.
  */
 // Problem #4 //
 
-
+function createSimplifiedObject(object){
+   return {
+      name: `${object.firstName} ${object.lastName}`,
+      age: object.age,
+      location: `${object.city}, ${object.state}`,
+      courses: object.courses.length
+   }
+}
 
 /**
  * 
@@ -127,6 +134,9 @@ Date of Last Course: 09/15/2023 (Bootcamp)
 
 // Problem #5 //
 
+function createString(object){
+return `${object.firstName} ${object.lastName[0]}.\nState & Time Zone: ${object.state} - ${object.timeZone}\nDate of Last Course: ${object.courses[object.courses.length - 1].dateOfLastAttempt} (${object.courses[object.courses.length - 1].courseName})\n`
+}
 
 
 
