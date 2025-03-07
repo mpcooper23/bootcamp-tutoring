@@ -17,7 +17,12 @@ New Orleans, LA - CST
 New Orleans, LA - CST
 */
 
+function logLocationAndTime (array) {
 
+for(let i = array.length - 1; i >= 0; i--){
+  console.log(`${array[i].location} - ${array[i].timeZone}`)
+}
+}
 
 // Problem #2 //
 /**
@@ -43,7 +48,16 @@ O: log each student's name followed by /n and the number of courses they have at
 C: use for loop to iterate through HALF of array (assume array is even)
 E:
 */
+function logHalf(array) {
+    for (let i = 0; i < array.length / 2; i++) {
+      console.log(`${array[i].name}\nCourses attempted: ${array[i].courses.length}\n--`);
+    }
+  }
+  
 
+
+
+//*
 
 // Problem #3 //
 /**
@@ -62,10 +76,18 @@ I: individual student object
 O: array of all string values in object, but only if they have a length of over 3
 C: for-in loop, conditional if statement to check for string data value
 E:
-
-
  */
 
+function getStringValues(student) {
+    let output = [];
+    for (let key in student) {
+      if (typeof student[key] === 'string' && student[key].length > 3) {
+        output.push(student[key]);
+      }
+    }
+    return output;
+  }
+  
 
 // Problem #4 //
 
@@ -92,7 +114,21 @@ E:
 
 */
 
-
+function createBooleanEntries(array, name) {
+    let output = [];
+    for (let i = 0; i < array.length; i++) {
+      if (array[i].name === name) {
+        let student = array[i];
+        for (let key in student) {
+          if (typeof student[key] === 'boolean') {
+            output.push(`${key}, ${student[key]}`);
+          }
+        }
+      }
+    }
+    return output;
+  }
+  
 
 // Problem #5 //
 
@@ -143,3 +179,22 @@ E:
 
 */
 
+function getCoursesByYear (array, year){
+let output = []
+    for(let i = 0; i < array.length; i++){
+      if(array[i].year === year){
+        let student = array[i]
+        console.log(student)
+
+for (let j = 0; j < student.courses.length; j++){
+output.push({
+  studentName: student.name,
+  course: student.courses[j].courseName,
+  status: student.courses[j].status,
+  observations: student.courses[j].observations.length
+})
+}
+      }
+    }
+    return output;
+}
