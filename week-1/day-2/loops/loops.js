@@ -18,11 +18,6 @@ New Orleans, LA - CST
 */
 
 
-function logLocationAndTime(array){
-   for (let i = array.length - 1; i >= 0; i--){
-    console.log(array[i].location + ' - ' + array[i].timeZone)
-   }
-}
 
 // Problem #2 //
 /**
@@ -48,12 +43,7 @@ O: log each student's name followed by /n and the number of courses they have at
 C: use for loop to iterate through HALF of array (assume array is even)
 E:
 */
- 
-function logHalf(array){
-    for (let i = 0; i < Math.floor(array.length / 2); i++){ //why Math.floor()?
-console.log(array[i].name + '\n' + 'Courses attempted: ' + array[i].courses.length + '\n' + '--')
-    }
-}
+
 
 // Problem #3 //
 /**
@@ -76,15 +66,6 @@ E:
 
  */
 
-function getStringValues(student){
-    let studentStr = [];
-    for (let key in student){
-        if (typeof student[key] === "string" && student[key].length > 3){
-studentStr.push(student[key])
-        }
-    }
-    return studentStr
-}
 
 // Problem #4 //
 
@@ -111,19 +92,7 @@ E:
 
 */
 
-function createBooleanEntries(array, name){
-    const output = []
-for (let i = 0; i < array.length; i++){//create loop to search for name
-    if(array[i].name === name){//check if current loop item's name === name input
-        for (let key in array[i]){//for in loop to access each property in outer loop
-            if (typeof array[i][key] === 'boolean'){
-            output.push([key, array[i][key]])
-                }
-             }
-        }
-    }
-return output;
-}
+
 
 // Problem #5 //
 
@@ -174,22 +143,3 @@ E:
 
 */
 
-function getCoursesByYear(array, year){
-    let newArr = [];
-    for (let i = 0; i < array.length; i++){
-        let courses = array[i].courses;
-        for (let j = 0; j < courses.length; j++){
-            if(courses[j].dateOfLastAttempt.includes(year)){
-            let newObj = {
-        studentName: array[i].name,
-                course: courses[j].courseName,
-                status: courses[j].status,
-             observations: courses[j].observations.length
-            };
-            newArr.push(newObj)
-        }
-    }
-}
-
-    return newArr 
-}
