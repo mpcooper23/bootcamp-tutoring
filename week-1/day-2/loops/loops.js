@@ -114,21 +114,9 @@ E:
 
 */
 
-function createBooleanEntries(array, name) {
-    let output = [];
-    for (let i = 0; i < array.length; i++) {
-      if (array[i].name === name) {
-        let student = array[i];
-        for (let key in student) {
-          if (typeof student[key] === 'boolean') {
-            output.push(`${key}, ${student[key]}`);
-          }
-        }
-      }
-    }
-    return output;
-  }
-  
+function createBooleanEntries (array, name) {
+
+}
 
 // Problem #5 //
 
